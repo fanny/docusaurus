@@ -1,0 +1,12 @@
+{
+  "name": "docusaurus-bootstrap-theme",
+  "version": "1.0.0",
+  "description": "Bootstrap theme for docusaurus",
+  "main": "src/index.js",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "^4.4.1",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4"
+  }
+}
