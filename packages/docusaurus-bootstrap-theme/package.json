@@ -5,8 +5,12 @@
   "main": "src/index.js",
   "license": "MIT",
   "dependencies": {
-    "bootstrap": "^4.4.1",
+    "bootstrap": "^4.4.1"
+  },
+  "peerDependencies": {
+    "@docusaurus/core": "^2.0.0",
     "react": "^16.8.4",
-    "react-dom": "^16.8.4"
+    "react-dom": "^16.8.4",
+    "webpack": "^4.41.2"
   }
 }
