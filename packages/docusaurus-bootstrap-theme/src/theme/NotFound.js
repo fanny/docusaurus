@@ -12,7 +12,7 @@ function NotFound() {
   return (
     <div class="container">
       <div class="d-flex flex-column justify-content-center mt-sm">
-        <h1>Page Not Found</h1>
+        <h1>Page N</h1>
         <p>We could not find what you were looking for.</p>
         <p>
           Please contact the owner of the site that linked you to the
