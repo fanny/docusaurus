@@ -7,7 +7,6 @@
 
 const versions = require('./versions.json');
 const path = require('path');
-console.log(path.resolve(__dirname, '../packages/docusaurus-bootstrap-theme'))  
 
 module.exports = {
   title: 'Docusaurus',
@@ -32,11 +31,10 @@ module.exports = {
         steps: 2, // the max number of images generated between min and max (inclusive)
       },
     ],
-    [path.resolve(__dirname, '../packages/docusaurus-bootstrap-theme')],
   ],
   presets: [
     [
-      '@docusaurus/preset-classic',
+      path.resolve(__dirname, '../packages/docusaurus-preset-classic'),
       {
         docs: {
           path: 'docs',

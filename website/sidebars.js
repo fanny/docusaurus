@@ -18,9 +18,9 @@ module.exports = {
       'creating-pages',
       'styling-layout',
       'static-assets',
-      {
+      /*{
         Docs: ['markdown-features', 'sidebar', 'versioning'],
-      },
+      },*/
       'blog',
       'search',
       'deployment',
