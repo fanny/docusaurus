@@ -20,6 +20,8 @@ import useHideableNavbar from '@theme/hooks/useHideableNavbar';
 import useLockBodyScroll from '@theme/hooks/useLockBodyScroll';
 import useLogo from '@theme/hooks/useLogo';
 
+import styles from './styles.module.css';
+
 function NavLink({activeBasePath, to, href, label, position, ...props}) {
   const toUrl = useBaseUrl(to);
   const activeBaseUrl = useBaseUrl(activeBasePath);

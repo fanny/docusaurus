@@ -16,6 +16,8 @@ import MDXComponents from '@theme/MDXComponents';
 import NotFound from '@theme/NotFound';
 import {matchPath} from '@docusaurus/router';
 
+import styles from './styles.module.css';
+
 function DocPage(props) {
   const {route: baseRoute, docsMetadata, location} = props;
   // case-sensitive route such as it is defined in the sidebar
@@ -24,7 +26,6 @@ function DocPage(props) {
       return matchPath(location.pathname, route);
     }) || {};
   const {permalinkToSidebar, docsSidebars, version} = docsMetadata;
-  console.log(currentRoute, docsMetadata)
   const sidebar = permalinkToSidebar[currentRoute.path];
   const {
     siteConfig: {themeConfig = {}} = {},
@@ -32,16 +33,15 @@ function DocPage(props) {
   } = useDocusaurusContext();
   const {sidebarCollapsible = true} = themeConfig;
 
-  console.log('hey', sidebar)
-
   if (Object.keys(currentRoute).length === 0) {
     return <NotFound {...props} />;
   }
+
   return (
     <Layout version={version} key={isClient}>
-      <div>
+      <div className={styles.docPage}>
         {sidebar && (
-          <div>
+          <div className={styles.docSidebarContainer}>
             <DocSidebar
               docsSidebars={docsSidebars}
               path={currentRoute.path}
@@ -50,7 +50,7 @@ function DocPage(props) {
             />
           </div>
         )}
-        <main>
+        <main className={styles.docMainContainer}>
           <MDXProvider components={MDXComponents}>
             {renderRoutes(baseRoute.routes)}
           </MDXProvider>

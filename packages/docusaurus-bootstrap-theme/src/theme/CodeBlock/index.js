@@ -14,6 +14,8 @@ import rangeParser from 'parse-numeric-range';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useThemeContext from '@theme/hooks/useThemeContext';
 
+import styles from './styles.module.css';
+
 const highlightLinesRangeRegex = /{([\d,-]+)}/;
 const codeBlockTitleRegex = /title=".*"/;
 

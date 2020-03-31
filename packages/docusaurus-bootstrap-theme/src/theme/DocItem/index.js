@@ -15,6 +15,7 @@ import DocPaginator from '@theme/DocPaginator';
 import useTOCHighlight from '@theme/hooks/useTOCHighlight';
 
 import classnames from 'classnames';
+import styles from './styles.module.css';
 
 const LINK_CLASS_NAME = 'contents__link';
 const ACTIVE_LINK_CLASS_NAME = 'contents__link--active';

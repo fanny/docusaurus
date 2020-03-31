@@ -16,8 +16,9 @@ import TabGroupChoiceProvider from '@theme/TabGroupChoiceProvider';
 import Navbar from '@theme/Navbar';
 import Footer from '@theme/Footer';
 
+import './styles.css';
+
 function Layout(props) {
-  console.log(ThemeProvider);
   const {siteConfig = {}} = useDocusaurusContext();
   const {
     favicon,

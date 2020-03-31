@@ -13,6 +13,8 @@ import useLogo from '@theme/hooks/useLogo';
 import Link from '@docusaurus/Link';
 import isInternalUrl from '@docusaurus/isInternalUrl';
 
+import styles from './styles.module.css';
+
 const MOBILE_TOGGLE_SIZE = 24;
 
 function DocSidebarItem({item, onItemClick, collapsible}) {

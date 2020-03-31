@@ -10,6 +10,8 @@ import useTabGroupChoiceContext from '@theme/hooks/useTabGroupChoiceContext';
 
 import classnames from 'classnames';
 
+import styles from './styles.module.css';
+
 const keys = {
   left: 37,
   right: 39,

@@ -11,6 +11,9 @@ import React from 'react';
 import classnames from 'classnames';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
+import './styles.css';
+import styles from './styles.module.css';
+
 const Heading = Tag =>
   function TargetComponent({id, ...props}) {
     const {
