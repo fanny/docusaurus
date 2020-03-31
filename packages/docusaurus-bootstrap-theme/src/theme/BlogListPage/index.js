@@ -7,17 +7,39 @@
 
 import React from 'react';
 
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import Layout from '@theme/Layout';
+import BlogPostItem from '@theme/BlogPostItem';
+import BlogListPaginator from '@theme/BlogListPaginator';
+
 function BlogListPage(props) {
   const {metadata, items} = props;
-  console.log(metadata, items);
+  const {
+    siteConfig: {title: siteTitle},
+  } = useDocusaurusContext();
+  const isBlogOnlyMode = metadata.permalink === '/';
+  const title = isBlogOnlyMode ? siteTitle : 'Blog';
 
   return (
-    <div className="container">
-      <div className="d-flex flex-column justify-content-center mt-xl">
-        Hey
+    <Layout title={title} description="Blog">
+      <div className="container margin-vert--xl">
+        <div className="row">
+          <div className="col col--8 col--offset-2">
+            {items.map(({content: BlogPostContent}) => (
+              <BlogPostItem
+                key={BlogPostContent.metadata.permalink}
+                frontMatter={BlogPostContent.frontMatter}
+                metadata={BlogPostContent.metadata}
+                truncated={BlogPostContent.metadata.truncated}>
+                <BlogPostContent />
+              </BlogPostItem>
+            ))}
+            <BlogListPaginator metadata={metadata} />
+          </div>
+        </div>
       </div>
-    </div>
-  )
+    </Layout>
+  );
 }
 
 export default BlogListPage;

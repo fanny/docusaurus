@@ -5,6 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 const admonitions = require('remark-admonitions');
+const path = require('path');
 
 const addAdmonitions = pluginOptions => {
   if (pluginOptions == null) {
@@ -38,9 +39,11 @@ module.exports = function preset(context, opts = {}) {
   const blog = addAdmonitions(opts.blog);
 
   const isProd = process.env.NODE_ENV === 'production';
+  console.log(path.resolve(__dirname, '../../docusaurus-bootstrap-theme'))
+  console.log('hey, you')
   return {
     themes: [
-      ['@docusaurus/theme-classic', opts.theme],
+      [path.resolve(__dirname, '../../docusaurus-bootstrap-theme')],
       // Don't add this if algolia config is not defined.
       algolia && '@docusaurus/theme-search-algolia',
     ],
