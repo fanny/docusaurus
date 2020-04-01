@@ -55,10 +55,10 @@ function BlogPostItem(props) {
     return (
       <header>
         <TitleHeading
-          className={classnames('display-4 row mb-sm', styles.blogPostTitle)}>
+          className={classnames('h3 row mb-sm', styles.blogPostTitle)}>
           {isBlogPostPage ? title : <Link to={permalink}>{title}</Link>}
         </TitleHeading>
-        <div className="row mb-2">
+        <div className="row mb-3">
           <time dateTime={date} className={classnames('text-muted', styles.blogPostDate)}>
             {month} {day}, {year}
           </time>
@@ -79,7 +79,7 @@ function BlogPostItem(props) {
             </a>
           )}
           </div>
-          <div className="col mb-2">
+          <div className="col mb-4">
             {author && (
               <>
                 <h4 className="mb-0">
@@ -103,7 +103,7 @@ function BlogPostItem(props) {
         <MDXProvider components={MDXComponents}>{children}</MDXProvider>
       </section>
       {(tags.length > 0 || truncated) && (
-        <footer className="row">
+        <footer className="row mb-5">
           {tags.length > 0 && (
             <div className="col-xs">
               <strong>Tags:</strong>

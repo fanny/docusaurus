@@ -12,3 +12,9 @@
 .blogPostDate {
   font-size: 0.9rem;
 }
+
+/* Why do I need of this?*/
+img {
+  box-sizing: content-box;
+  max-width: 100%;
+}

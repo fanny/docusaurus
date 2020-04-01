@@ -24,7 +24,7 @@ function BlogListPage(props) {
     <Layout title={title} description="Blog">
       <div className="container-fluid">
         <div className="row justify-content-center">
-          <div className="col col-md-6">
+          <div className="col col-sm-4">
             {items.map(({content: BlogPostContent}) => (
               <BlogPostItem
                 key={BlogPostContent.metadata.permalink}
