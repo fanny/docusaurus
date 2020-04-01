@@ -55,37 +55,39 @@ function BlogPostItem(props) {
     return (
       <header>
         <TitleHeading
-          className={classnames('margin-bottom--sm', styles.blogPostTitle)}>
+          className={classnames('display-4 row mb-sm', styles.blogPostTitle)}>
           {isBlogPostPage ? title : <Link to={permalink}>{title}</Link>}
         </TitleHeading>
-        <div className="margin-bottom--sm">
-          <time dateTime={date} className={styles.blogPostDate}>
+        <div className="row mb-2">
+          <time dateTime={date} className={classnames('text-muted', styles.blogPostDate)}>
             {month} {day}, {year}
           </time>
         </div>
-        <div className="avatar margin-bottom--md">
+        <div className="row">
+          <div className="col-xs">
           {authorImageURL && (
             <a
-              className="avatar__photo-link"
               href={authorURL}
               target="_blank"
               rel="noreferrer noopener">
               <img
-                className="avatar__photo"
+                className="rounded-circle"
+                style={{width: "50px"}}
                 src={authorImageURL}
                 alt={author}
               />
             </a>
           )}
-          <div className="avatar__intro">
+          </div>
+          <div className="col mb-2">
             {author && (
               <>
-                <h4 className="avatar__name">
+                <h4 className="mb-0">
                   <a href={authorURL} target="_blank" rel="noreferrer noopener">
                     {author}
                   </a>
                 </h4>
-                <small className="avatar__subtitle">{authorTitle}</small>
+                <small className="text-muted">{authorTitle}</small>
               </>
             )}
           </div>
@@ -95,20 +97,20 @@ function BlogPostItem(props) {
   };
 
   return (
-    <article className={!isBlogPostPage ? 'margin-bottom--xl' : undefined}>
+    <article className={!isBlogPostPage ? 'mb-xl' : undefined}>
       {renderPostHeader()}
-      <section className="markdown">
+      <section className="row lead markdown">
         <MDXProvider components={MDXComponents}>{children}</MDXProvider>
       </section>
       {(tags.length > 0 || truncated) && (
-        <footer className="row margin-vert--lg">
+        <footer className="row">
           {tags.length > 0 && (
-            <div className="col">
+            <div className="col-xs">
               <strong>Tags:</strong>
               {tags.map(({label, permalink: tagPermalink}) => (
                 <Link
                   key={tagPermalink}
-                  className="margin-horiz--sm"
+                  className="mx-2"
                   to={tagPermalink}>
                   {label}
                 </Link>
@@ -116,7 +118,7 @@ function BlogPostItem(props) {
             </div>
           )}
           {truncated && (
-            <div className="col text--right">
+            <div className="col text-right">
               <Link
                 to={metadata.permalink}
                 aria-label={`Read more about ${title}`}>
