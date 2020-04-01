@@ -12,24 +12,24 @@ function BlogPostPaginator(props) {
   const {nextItem, prevItem} = props;
 
   return (
-    <nav className="pagination-nav">
-      <div className="pagination-nav__item">
+    <nav className="row row-cols-2 no-gutters">
+      <div className="text-left">
         {prevItem && (
-          <Link className="pagination-nav__link" to={prevItem.permalink}>
-            <h5 className="pagination-nav__link--sublabel">Previous Post</h5>
-            <h4 className="pagination-nav__link--label">
+          <Link to={prevItem.permalink}>
+            <span className="text-muted">Previous Post</span>
+            <h6>
               &laquo; {prevItem.title}
-            </h4>
+            </h6>
           </Link>
         )}
       </div>
-      <div className="pagination-nav__item pagination-nav__item--next">
+      <div className="text-right">
         {nextItem && (
-          <Link className="pagination-nav__link" to={nextItem.permalink}>
-            <h5 className="pagination-nav__link--sublabel">Next Post</h5>
-            <h4 className="pagination-nav__link--label">
+          <Link to={nextItem.permalink}>
+            <span className="text-muted">Next Post</span>
+            <h6>
               {nextItem.title} &raquo;
-            </h4>
+            </h6>
           </Link>
         )}
       </div>

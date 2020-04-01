@@ -17,9 +17,9 @@ function BlogPostPage(props) {
   return (
     <Layout title={metadata.title} description={metadata.description}>
       {BlogPostContents && (
-        <div className="container margin-vert--xl">
+        <div className="container justify-content-center my-xl">
           <div className="row">
-            <div className="col col--8 col--offset-2">
+            <div className="col col-8">
               <BlogPostItem
                 frontMatter={frontMatter}
                 metadata={metadata}
@@ -27,7 +27,7 @@ function BlogPostPage(props) {
                 <BlogPostContents />
               </BlogPostItem>
               {(metadata.nextItem || metadata.prevItem) && (
-                <div className="margin-vert--xl">
+                <div className="my-xl">
                   <BlogPostPaginator
                     nextItem={metadata.nextItem}
                     prevItem={metadata.prevItem}
