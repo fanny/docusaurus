@@ -11,6 +11,11 @@ module.exports = function(context, options) {
     name: 'docusaurus-bootstrap-theme',
     getThemePath() {
       return path.resolve(__dirname, './theme');
-    }
+    },
+    getClientModules() {
+      return [
+        'bootstrap/dist/css/bootstrap.min.css'
+      ];
+    },
   }
 }

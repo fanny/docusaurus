@@ -5,7 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import React, {useState, useCallback, useEffect} from 'react';
+import {useState, useCallback, useEffect} from 'react';
 
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
@@ -23,8 +23,6 @@ const useTheme = () => {
       ? document.documentElement.getAttribute('data-theme')
       : themes.light,
   );
-  console.log(themes);
-
 
   const setThemeSyncWithLocalStorage = useCallback(
     newTheme => {

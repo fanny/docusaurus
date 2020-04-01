@@ -13,7 +13,7 @@ import renderRoutes from '@docusaurus/renderRoutes';
 import Layout from '@theme/Layout';
 import DocSidebar from '@theme/DocSidebar';
 import MDXComponents from '@theme/MDXComponents';
-import NotFound from '@theme/NotFound';
+import NotFound from '../NotFound';
 import {matchPath} from '@docusaurus/router';
 
 import styles from './styles.module.css';
@@ -39,22 +39,26 @@ function DocPage(props) {
 
   return (
     <Layout version={version} key={isClient}>
-      <div className={styles.docPage}>
-        {sidebar && (
-          <div className={styles.docSidebarContainer}>
-            <DocSidebar
-              docsSidebars={docsSidebars}
-              path={currentRoute.path}
-              sidebar={sidebar}
-              sidebarCollapsible={sidebarCollapsible}
-            />
-          </div>
-        )}
-        <main className={styles.docMainContainer}>
-          <MDXProvider components={MDXComponents}>
-            {renderRoutes(baseRoute.routes)}
-          </MDXProvider>
-        </main>
+      <div className="container">
+      <div className="d-flex justify-content-center">
+        <div className={styles.docPage}>
+          {sidebar && (
+            <div className={styles.docSidebarContainer}>
+              <DocSidebar
+                docsSidebars={docsSidebars}
+                path={currentRoute.path}
+                sidebar={sidebar}
+                sidebarCollapsible={sidebarCollapsible}
+              />
+            </div>
+          )}
+          <main className={styles.docMainContainer}>
+            <MDXProvider components={MDXComponents}>
+              {renderRoutes(baseRoute.routes)}
+            </MDXProvider>
+          </main>
+        </div>
+        </div>
       </div>
     </Layout>
   );
