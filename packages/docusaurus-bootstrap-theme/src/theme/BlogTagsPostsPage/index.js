@@ -23,15 +23,15 @@ function BlogTagsPostPage(props) {
     <Layout
       title={`Posts tagged "${tagName}"`}
       description={`Blog | Tagged "${tagName}"`}>
-      <div className="container margin-vert--xl">
+      <div className="container">
         <div className="row">
-          <div className="col col--8 col--offset-2">
+          <div className="col col-8 p-0 offset-2">
             <h1>
               {count} {pluralize(count, 'post')} tagged with &quot;{tagName}
               &quot;
             </h1>
             <Link href={allTagsPath}>View All Tags</Link>
-            <div className="margin-vert--xl">
+            <div className="col mt-5">
               {items.map(({content: BlogPostContent}) => (
                 <BlogPostItem
                   key={BlogPostContent.metadata.permalink}

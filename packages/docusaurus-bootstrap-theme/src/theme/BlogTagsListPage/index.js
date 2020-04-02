@@ -49,11 +49,11 @@ function BlogTagsListPage(props) {
 
   return (
     <Layout title="Tags" description="Blog Tags">
-      <div className="container margin-vert--xl">
+      <div className="container my-5">
         <div className="row">
-          <div className="col col--8 col--offset-2">
+          <div className="col col-8 offset-2">
             <h1>Tags</h1>
-            <div className="margin-vert--lg">{tagsSection}</div>
+            <div className="mt-5">{tagsSection}</div>
           </div>
         </div>
       </div>

@@ -13,22 +13,22 @@ function BlogListPaginator(props) {
   const {previousPage, nextPage} = metadata;
 
   return (
-    <nav className="pagination-nav">
-      <div className="pagination-nav__item">
+    <nav className="row row-cols-2 no-gutters">
+      <div className="text-left">
         {previousPage && (
-          <Link className="pagination-nav__link" to={previousPage}>
-            <h4 className="pagination-nav__link--label">
+          <Link to={previousPage}>
+            <h5>
               &laquo; Newer Entries
-            </h4>
+            </h5>
           </Link>
         )}
       </div>
-      <div className="pagination-nav__item pagination-nav__item--next">
+      <div className="text-right">
         {nextPage && (
-          <Link className="pagination-nav__link" to={nextPage}>
-            <h4 className="pagination-nav__link--label">
+          <Link to={nextPage}>
+            <h5>
               Older Entries &raquo;
-            </h4>
+            </h5>
           </Link>
         )}
       </div>

@@ -17,9 +17,9 @@ function BlogPostPage(props) {
   return (
     <Layout title={metadata.title} description={metadata.description}>
       {BlogPostContents && (
-        <div className="container justify-content-center my-xl">
+        <div className="container my-xl">
           <div className="row">
-            <div className="col col-8">
+            <div className="col col-8 offset-2">
               <BlogPostItem
                 frontMatter={frontMatter}
                 metadata={metadata}
