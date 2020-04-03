@@ -36,7 +36,7 @@ function BlogTagsListPage(props) {
         <h3>{category}</h3>
         {tagsForCategory.map(tag => (
           <Link
-            className="padding-right--md"
+            className="pr-md"
             href={tags[tag].permalink}
             key={tag}>
             {tags[tag].name} ({tags[tag].count})
